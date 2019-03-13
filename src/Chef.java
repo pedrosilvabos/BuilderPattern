@@ -1,28 +1,33 @@
 class Chef implements Recipe {
-    private Soup soupTmp;
+    private Soup unCookedSoup;
 
+    //prepate the soup to accept the vegetables
+    //Constructor set the property as a new object
     public Chef() {
-        soupTmp = new Soup();
+        unCookedSoup = new Soup();
     }
-
-    @Override
-    public Soup makeIt() {
-        Soup soup = new Soup();
-        soup.setVegetables(soupTmp.getVegetables());
-        soup.setNumberOfBowls(soupTmp.getNumberOfBowls());
-        return soup;
-    }
-
-    @Override //fluent
-    public Recipe addVegetables(final String vegetables) {
-        soupTmp.setVegetables(vegetables);
-        return this;
-    }
-
 
     @Override
     public Recipe setBowls(final int bowls) {
-        soupTmp.setNumberOfBowls(bowls);
+        unCookedSoup.setNumberOfBowls(bowls);
         return this;
     }
+
+    @Override //fluent interface
+    public Recipe addVegetables(final String vegetables) {
+        unCookedSoup.setVegetables(vegetables);
+        return this;
+    }
+
+    //A brand new object is created with the properties that were set
+    // and it is returned to the caller
+    @Override //fluent interface
+    public Soup cookIt() {
+        Soup soup = new Soup();
+        soup.setVegetables(unCookedSoup.getVegetables());
+        soup.setNumberOfBowls(unCookedSoup.getNumberOfBowls());
+        return soup;
+    }
+
+
 }

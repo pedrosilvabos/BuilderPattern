@@ -1,5 +1,5 @@
 interface Recipe {
-    Soup makeIt();
+    Soup cookIt();
 
     Recipe addVegetables(final String vegetables);
 

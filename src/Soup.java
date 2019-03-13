@@ -11,6 +11,7 @@ class Soup {
     }
 
     public void setVegetables(final String vegetables) {
+
         this.vegetables = vegetables;
     }
 
@@ -24,6 +25,6 @@ class Soup {
 
     @Override
     public String toString() {
-        return "Soup [Bowls = " + numberOfBowls + ", vegetable = " + vegetables + "]";
+        return "Servig " + numberOfBowls + " bowls, of " + vegetables + " soup.";
     }
 }
