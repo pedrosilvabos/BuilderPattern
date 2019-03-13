@@ -32,8 +32,10 @@ public class Account {
     }
 
     public BankAccount build() {
-        //Here we create the actual bank account object, which is always in a fully initialised state when it's returned.
-        BankAccount account = new BankAccount();  //Since the builder is in the BankAccount class, we can invoke its private constructor.
+        //Here we create the actual bank account object
+        // which is always in a fully initialised state when it's returned.
+        BankAccount account = new BankAccount();
+        //the builder is in the BankAccount package, we can invoke its default constructor.
 
         account.accountNumber = this.accountNumber;
         account.owner = this.owner;
