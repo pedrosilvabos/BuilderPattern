@@ -1,39 +1,39 @@
 package org.academiadecodigo.tropadelete.BuilderPattern;
 
-public class Account {
+public class AccountBuilder {
     private long accountNumber; //This is important, so we'll pass it to the constructor.
     private String owner;
     private String branch;
     private double balance;
     private double interestRate;
 
-    public Account(long accountNumber) {
+    public AccountBuilder(long accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public Account withOwner(String owner) {
+    public AccountBuilder withOwner(String owner) {
         this.owner = owner;
         return this;  //By returning the builder each time, we can create a fluent interface.
     }
 
-    public Account atBranch(String branch) {
+    public AccountBuilder atBranch(String branch) {
         this.branch = branch;
         return this;
     }
 
-    public Account openingBalance(double balance) {
+    public AccountBuilder openingBalance(double balance) {
         this.balance = balance;
         return this;
     }
 
-    public Account atRate(double interestRate) {
+    public AccountBuilder atRate(double interestRate) {
         this.interestRate = interestRate;
         return this;
     }
 
     public BankAccount build() {
         //Here we create the actual bank account object
-        // which is always in a fully initialised state when it's returned.
+        //which is always in a fully initialised state when it's returned.
         BankAccount account = new BankAccount();
         //the builder is in the BankAccount package, we can invoke its default constructor.
 

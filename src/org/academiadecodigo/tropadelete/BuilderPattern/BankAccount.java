@@ -13,7 +13,7 @@ public class BankAccount {
 
     public void getDetails() {
         System.out.println( "\n-==-==-==-==-==-==-==-==-==-==-==-==-==-==-\n"
-                + "Account number: " + this.accountNumber + "\n"
+                + "AccountBuilder number: " + this.accountNumber + "\n"
                 + "Owner Name: " + this.owner + "\n"
                 + "Branch: " + this.branch + "\n"
                 + "Balance: " + this.balance + "\n"
